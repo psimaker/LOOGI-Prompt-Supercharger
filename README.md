@@ -118,7 +118,7 @@ The two services run in separate Docker containers and are orchestrated by `dock
 -   **Docker-First:** The project is containerized to ensure a consistent and easy setup process, avoiding "it works on my machine" issues.
 -   **Separate Frontend/Backend:** This separation allows for independent development, scaling, and deployment. The frontend is a pure static build served by Nginx, while the backend is a stateful Node.js application.
 -   **Contract Enforcement:** The core logic for retrying and validating AI outputs is encapsulated in the backend. This makes the system more robust against flaky or non-compliant responses from the LLM.
--   **Non-Commercial License:** I chose the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) license because this is a personal project I want to share openly for non-commercial, educational, and research purposes.
+-   **Apache 2.0 License:** I chose the [Apache License 2.0](https://opensource.org/licenses/Apache-2.0) because this is a personal project I want to share openly for both commercial and non-commercial use.
 
 ## Limitations & Roadmap
 
@@ -178,4 +178,4 @@ This is a personal project, but I\'m open to feedback and contributions. If you 
 
 ## License
 
-This project is licensed under the [Apache License 2.0](./LICENSE).
+This project is licensed under the [Apache License 2.0](./LICENSE). It is free for personal, educational, and non-commercial use. For commercial licensing, please contact the repository owner.
