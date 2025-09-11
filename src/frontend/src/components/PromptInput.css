@@ -1,0 +1,120 @@
+/* Cursor fix for PromptInput - Context7-based solution */
+.prompt-input-container {
+  position: relative;
+  width: 100%;
+  /* CSS variables for dynamic styling */
+  --cursor-style: text;
+  --caret-color: #3b82f6;
+  --padding-size: 12px;
+  --border-color: #d1d5db;
+  --border-hover-color: #9ca3af;
+  --bg-color: #ffffff;
+  --text-color: #111827;
+  --placeholder-color: #6b7280;
+}
+
+/* Dark Mode Variablen */
+.prompt-input-container.dark {
+  --border-color: #4b5563;
+  --border-hover-color: #6b7280;
+  --bg-color: #374151;
+  --text-color: #ffffff;
+  --placeholder-color: #9ca3af;
+}
+
+/* Basis-Textarea-Styling mit CSS-Variablen */
+.prompt-input-container textarea {
+  position: relative;
+  z-index: 2; /* Höher als Pseudo-Elemente */
+  cursor: var(--cursor-style) !important;
+  caret-color: var(--caret-color) !important;
+  padding: var(--padding-size) !important;
+  
+  /* Visuelle Stile */
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  border-color: var(--border-color);
+  
+  /* Browser-spezifische Optimierungen */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  
+  /* Performance-Optimierung */
+  will-change: transform, border-color;
+  transition: border-color 0.2s ease-in-out;
+}
+
+/* Hover-Effekt mit CSS-Variablen */
+.prompt-input-container textarea:hover {
+  border-color: var(--border-hover-color) !important;
+  cursor: var(--cursor-style) !important;
+}
+
+/* Focus-Status */
+.prompt-input-container textarea:focus {
+  cursor: var(--cursor-style) !important;
+  outline: none;
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+}
+
+/* Placeholder-Styling mit CSS-Variablen */
+.prompt-input-container textarea::placeholder {
+  color: var(--placeholder-color);
+  cursor: var(--cursor-style) !important;
+}
+
+/* Webkit-spezifische Fixes (Chrome, Safari) */
+.prompt-input-container textarea::-webkit-input-placeholder {
+  cursor: var(--cursor-style) !important;
+}
+
+/* Firefox-spezifische Fixes */
+.prompt-input-container textarea::-moz-placeholder {
+  cursor: var(--cursor-style) !important;
+}
+
+/* Edge/IE-spezifische Fixes */
+.prompt-input-container textarea:-ms-input-placeholder {
+  cursor: var(--cursor-style) !important;
+}
+
+/* Container-Hover-Effekt - KEIN Overlay mehr */
+.prompt-input-container:hover {
+  /* Nur visuelle Indikation, kein Blockieren */
+}
+
+/* Spezifische Browser-Optimierungen */
+@supports (-webkit-appearance: none) {
+  .prompt-input-container textarea {
+    -webkit-appearance: none;
+  }
+}
+
+@supports (-moz-appearance: none) {
+  .prompt-input-container textarea {
+    -moz-appearance: none;
+  }
+}
+
+/* Hochpräzise Spezifizität ohne Pseudo-Elemente */
+.prompt-input-container.prompt-input-container > textarea {
+  cursor: text !important;
+  caret-color: #3b82f6 !important;
+}
+
+/* Test-Klasse für Debugging */
+.prompt-input-container.debug {
+  border: 1px dashed red;
+}
+
+.prompt-input-container.debug::after {
+  content: "Cursor: " var(--cursor-style);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  font-size: 10px;
+  color: red;
+  z-index: 1000;
+}

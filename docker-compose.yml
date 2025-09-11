@@ -1,0 +1,46 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: src/backend/Dockerfile
+    ports:
+      - "${DOCKER_BACKEND_PORT}:${REACT_APP_BACKEND_PORT}"
+    environment:
+      - NODE_ENV=production
+      - PORT=${REACT_APP_BACKEND_PORT}
+      - CORS_ORIGIN=http://localhost:${REACT_APP_FRONTEND_DEV_PORT}
+      - RATE_LIMIT_WINDOW_MS=60000
+      - RATE_LIMIT_MAX_REQUESTS=10
+      - AI_API_URL=https://api.deepseek.com/v1
+      - AI_MODEL=deepseek-chat
+      - AI_MAX_TOKENS=4000
+      - AI_TEMPERATURE=0.2
+      - AI_TOP_P=0.9
+      - AI_TIMEOUT=30000
+      - CONTRACT_MAX_ATTEMPTS=2
+      - CONTRACT_ENABLE_RETRY=true
+      - LOG_AI_REQUESTS=true
+    env_file:
+      - .env
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:${REACT_APP_BACKEND_PORT}/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: src/frontend/Dockerfile.prod
+    ports:
+      - "${DOCKER_FRONTEND_PORT}:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3

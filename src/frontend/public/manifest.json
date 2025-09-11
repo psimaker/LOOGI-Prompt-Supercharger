@@ -1,0 +1,23 @@
+{
+  "name": "LOOGI Prompt Supercharger",
+  "short_name": "LOOGI",
+  "icons": [
+    {
+      "src": "/favicon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#2563eb",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "AI-powered prompt enhancement tool for better AI interactions"
+}
