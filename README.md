@@ -1,8 +1,10 @@
 # LOOGI Prompt Supercharger
 
-[![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/) [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker)](https://docker.com/) [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js)](https://nodejs.org/) [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)](https://reactjs.org/)
+[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) [![Docker](https://img.shields.io/badge/Docker-Ready-2496ED?style=flat&logo=docker)](https://docker.com/) [![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=flat&logo=node.js)](https://nodejs.org/) [![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)](https://reactjs.org/)
 
-LOOGI is a self-hosted tool that uses an AI model to refine your prompts, making them more specific and effective. It runs in Docker and provides a simple web interface and API.
+LOOGI Prompt Supercharger is a self-hosted tool that uses an AI model to refine your prompts, making them more specific and effective. It runs in Docker and provides a simple web interface and API.
+
+You can test it here: [https://prompt.loogi.ch](https://prompt.loogi.ch)
 
 ![LOOGI Prompt Supercharger Demo](./docs/assets/loogi-demo.gif)
 
@@ -29,8 +31,8 @@ This project runs in Docker. You\'ll need Docker and Docker Compose installed.
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://github.com/psimaker/LOOGI-Prompt-Supercharger-studio.git
-    cd LOOGI-Prompt-Supercharger-studio
+    git clone https://github.com/psimaker/LOOGI-Prompt-Supercharger.git
+    cd LOOGI-Prompt-Supercharger
     ```
 
 2.  **Configure your environment:**
@@ -176,4 +178,4 @@ This is a personal project, but I\'m open to feedback and contributions. If you 
 
 ## License
 
-This project is licensed under the [Apache License 2.0](./LICENSE).icense](./LICENSE). It is free for personal, educational, and non-commercial use. For commercial licensing, please contact the repository owner.
+This project is licensed under the [Apache License 2.0](./LICENSE).
