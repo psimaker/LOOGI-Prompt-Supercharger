@@ -42,9 +42,10 @@ class ApiService {
         if (error.response?.data?.error) {
           // Use the structured error from the API
           const apiError = error.response.data.error;
-          const customError = new Error(apiError.message);
-          (customError as any).statusCode = apiError.statusCode;
-          (customError as any).details = apiError.details;
+          const customError = Object.assign(new Error(apiError.message), {
+            statusCode: apiError.statusCode,
+            details: apiError.details,
+          });
           throw customError;
         } else if (error.response) {
           // Fallback for non-API errors
