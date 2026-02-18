@@ -105,7 +105,7 @@ export class DeepseekClient {
     originalPrompt: string,
     mode: 'standard' | 'creative' | 'technical' | 'scientifically',
     maxTokens?: number,
-    language?: string
+    _language?: string
   ): Promise<{
     enhancedPrompt: string;
     improvements: string[];
