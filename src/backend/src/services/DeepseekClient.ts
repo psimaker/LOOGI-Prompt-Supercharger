@@ -64,7 +64,8 @@ export class DeepseekClient {
       (error: AxiosError) => {
         if (error.response) {
           const status = error.response.status;
-          const message = (error.response.data as any)?.error?.message || error.message;
+          const data = error.response.data as { error?: { message?: string } } | undefined;
+          const message = data?.error?.message || error.message;
           
           if (status === 401) {
             throw new AIServiceError('Invalid API key', { status, message });

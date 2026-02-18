@@ -49,6 +49,11 @@
     "typescript",
     "express"
   ],
-  "author": "",
-  "license": "Apache-2.0"
+  "author": "psimaker",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/psimaker/LOOGI-Prompt-Supercharger.git"
+  },
+  "homepage": "https://www.prompt.loogi.ch"
 }
